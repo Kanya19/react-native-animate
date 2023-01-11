@@ -1,0 +1,33 @@
+module.exports = {
+  header: {
+    borderTopLeftRadius: 8,
+    borderTopRightRadius: 8,
+    borderBottomRightRadius: 0,
+    borderBottomLeftRadius: 0,
+    paddingTop: 14,
+    paddingRight: 10,
+    paddingBottom: 14,
+    paddingLeft: 10,
+    fontSize: 14,
+    color: '#3A3A3A',
+    backgroundColor: '#f7f7f7',
+  },
+  itemWrap: {flexDirection: 'row', paddingTop: 40, paddingRight: 0, paddingBottom: 40, paddingLeft: 0},
+  item: {
+    width: '50%',
+    textAlign: 'center',
+    color: '#9E9E9E',
+    fontSize: 14,
+    flexDirection: 'column',
+    alignItems: 'center',
+  },
+  label: {marginTop: 10},
+  modalBox: {
+    borderTopLeftRadius: 8,
+    borderTopRightRadius: 8,
+    borderBottomRightRadius: 0,
+    borderBottomLeftRadius: 0,
+    width: '100%',
+    backgroundColor: '#fff',
+  },
+}

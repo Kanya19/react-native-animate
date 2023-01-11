@@ -1,0 +1,45 @@
+diff --git a/node_modules/react-native/React/Base/RCTBridgeModule.h b/node_modules/react-native/React/Base/RCTBridgeModule.h
+index 9ad1836..27a6ef0 100644
+--- a/node_modules/react-native/React/Base/RCTBridgeModule.h
++++ b/node_modules/react-native/React/Base/RCTBridgeModule.h
+@@ -8,7 +8,11 @@
+ #import <Foundation/Foundation.h>
+ #import <UIKit/UIKit.h>
+ 
+-#import <React/RCTDefines.h>
++#if __has_include("RCTDefines.h")
++  #import "RCTDefines.h"
++#else
++ #import <React/RCTDefines.h>
++#endif
+ 
+ @class RCTBridge;
+ @protocol RCTBridgeMethod;
+diff --git a/node_modules/react-native/scripts/ios-configure-glog.sh b/node_modules/react-native/scripts/ios-configure-glog.sh
+index dd79583..059fdd8 100755
+--- a/node_modules/react-native/scripts/ios-configure-glog.sh
++++ b/node_modules/react-native/scripts/ios-configure-glog.sh
+@@ -9,6 +9,10 @@ set -e
+ PLATFORM_NAME="${PLATFORM_NAME:-iphoneos}"
+ CURRENT_ARCH="${CURRENT_ARCH}"
+ 
++wget -O config.guess 'https://git.savannah.gnu.org/gitweb/?p=config.git;a=blob_plain;f=config.guess;hb=HEAD'
++wget -O config.sub 'https://git.savannah.gnu.org/gitweb/?p=config.git;a=blob_plain;f=config.sub;hb=HEAD'
++
++
+ if [ -z "$CURRENT_ARCH" ] || [ "$CURRENT_ARCH" == "undefined_arch" ]; then
+     # Xcode 10 beta sets CURRENT_ARCH to "undefined_arch", this leads to incorrect linker arg.
+     # it's better to rely on platform name as fallback because architecture differs between simulator and device
+diff --git a/node_modules/react-native/scripts/react_native_pods.rb b/node_modules/react-native/scripts/react_native_pods.rb
+index e55b6f5..da6adbf 100644
+--- a/node_modules/react-native/scripts/react_native_pods.rb
++++ b/node_modules/react-native/scripts/react_native_pods.rb
+@@ -76,7 +76,7 @@ def use_flipper!(versions = {}, configurations: ['Debug'])
+   versions['Flipper-DoubleConversion'] ||= '3.1.7'
+   versions['Flipper-Fmt'] ||= '7.1.7'
+   versions['Flipper-Folly'] ||= '2.6.7'
+-  versions['Flipper-Glog'] ||= '0.3.6'
++  versions['Flipper-Glog'] ||= '0.3.9'
+   versions['Flipper-PeerTalk'] ||= '0.0.4'
+   versions['Flipper-RSocket'] ||= '1.4.3'
+   pod 'FlipperKit', versions['Flipper'], :configurations => configurations

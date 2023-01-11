@@ -1,0 +1,27 @@
+module.exports = {
+  listBox: {
+    marginTop: 24,
+    marginRight: 24,
+    marginBottom: 24,
+    marginLeft: 24,
+    borderRadius: 20,
+    backgroundColor: '#fff',
+    paddingTop: 0,
+    paddingRight: 18,
+    paddingBottom: 0,
+    paddingLeft: 18,
+  },
+  listBoxWrap: {
+    paddingTop: 18,
+    paddingRight: 0,
+    paddingBottom: 18,
+    paddingLeft: 0,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+  },
+  borderBottom: {borderBottomWidth: 1, borderBottomColor: '#eee'},
+  listText: {flexDirection: 'row', alignItems: 'center'},
+  listImage: {width: 24, height: 24, marginRight: 20},
+  listLabel: {fontSize: 15, color: '#222222'},
+}

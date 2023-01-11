@@ -1,0 +1,27 @@
+module.exports = {
+  invitePage: {backgroundColor: '#f5f5f5', height: '100%', overflow: 'hidden'},
+  sharePicture: {height: 640},
+  tips: {textAlign: 'center', color: '#9E9E9E'},
+  poster: {backgroundColor: '#fff', borderRadius: 10, marginTop: 0, marginRight: 14, marginBottom: 0, marginLeft: 14},
+  txt: {lineHeight: 40, fontSize: 16, paddingLeft: 10},
+  image: {
+    borderTopLeftRadius: 10,
+    borderTopRightRadius: 10,
+    borderBottomRightRadius: 0,
+    borderBottomLeftRadius: 0,
+    width: '100%',
+    height: 100,
+  },
+  nickname: {color: '#9E9E9E'},
+  slogan: {marginTop: 10},
+  bottom: {
+    justifyContent: 'space-between',
+    flexDirection: 'row',
+    paddingTop: 20,
+    paddingRight: 0,
+    paddingBottom: 20,
+    paddingLeft: 0,
+  },
+  left: {marginLeft: 10, flexDirection: 'row'},
+  mini: {fontSize: 10, color: '#9E9E9E', textAlign: 'center', marginTop: -4, marginBottom: 10},
+}
